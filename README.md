@@ -18,11 +18,8 @@
 
 > *Real-world multimodal agents solve multi-step workflows grounded in visual evidence.*
 
-Humans seamlessly integrate visual perception with tool use to tackle complex problems -- diagnosing a device by linking a wiring photo to a schematic, planning a trip by interpreting a transit map and checking schedules, or verifying product details by comparing shelf labels with online specifications. Existing multimodal benchmarks, however, focus on single-turn visual reasoning or isolated tool skills and fail to capture the **realism**, **visual subtlety**, and **long-horizon tool use** that practical agents demand.
+**AgentVista** is the first benchmark that evaluates multimodal agents on realistic, ultra-challenging visual scenarios requiring long-horizon hybrid tool use. It spans **25 sub-domains** across **7 categories** with **209** expert-curated tasks. Even the best model, **Gemini-3-Pro**, achieves only **27.3%** overall accuracy. This repository provides a **lightweight yet general agent framework** for reproducible evaluation.
 
-**AgentVista** fills this gap. It is a benchmark for generalist multimodal agents that spans **25 sub-domains** across **7 categories**, pairing realistic and detail-rich visual scenarios with natural hybrid tool use. Tasks require long-horizon interactions across modalities, including web search, image search, page navigation, and code-based operations for both image processing and general programming. Even the best model in our evaluation, **Gemini-3-Pro**, achieves only **27.3% overall accuracy**, and hard instances can require more than **25 tool-calling turns**.
-
-This repository provides a **lightweight yet general agent framework** for reproducible evaluation on the AgentVista benchmark.
 
 <div align="center">
   <img src="docs/data_examples.png" alt="AgentVista Examples" width="800">
