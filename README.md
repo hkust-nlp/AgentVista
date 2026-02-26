@@ -1,4 +1,5 @@
 <div align="center">
+  <img src="docs/logo.png" alt="Logo" width="300">
   <h1 align="center">AgentVista: Evaluating Multimodal Agents in<br>Ultra-Challenging Realistic Visual Scenarios</h1>
 
   <a href="#">
