@@ -24,6 +24,12 @@ Humans seamlessly integrate visual perception with tool use to tackle complex pr
 
 This repository provides a **lightweight yet general agent framework** for reproducible evaluation on the AgentVista benchmark.
 
+<div align="center">
+  <img src="docs/data_examples.png" alt="AgentVista Examples" width="800">
+  <br>
+  <em>Sampled AgentVista examples from each domain. Each query is grounded in complex, real-world visual scenes and is designed to elicit agentic tool use with multi-step reasoning toward a unique, verifiable answer.</em>
+</div>
+
 ---
 
 ## News
