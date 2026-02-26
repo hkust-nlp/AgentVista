@@ -16,6 +16,7 @@
   </a>
 </div>
 
+---
 
 > *Real-world multimodal agents solve multi-step workflows grounded in visual evidence.*
 
