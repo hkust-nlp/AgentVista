@@ -2,7 +2,7 @@
   <img src="docs/logo.png" alt="Logo" width="300">
   <h1 align="center">AgentVista: Evaluating Multimodal Agents in<br>Ultra-Challenging Realistic Visual Scenarios</h1>
 
-  <a href="#">
+  <a href="https://arxiv.org/pdf/2602.23166">
     <img src="https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white" alt="Paper">
   </a>
   <a href="https://github.com/hkust-nlp/AgentVista">
