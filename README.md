@@ -289,9 +289,9 @@ If you find AgentVista useful, please cite our paper:
 
 ```bibtex
 @article{su2026agentvista,
-  title={AgentVista: Evaluating Multimodal Agent in Ultra-Challenging Realistic Visual Scenarios},
-  author={Su, Zhaochen and Gao, Jincheng and Guo, Hangyu and Liu, Zhenhua and Zhang, Lueyang and Geng, Xinyu and Huang, Shijue and Xia, Peng and Jiang, Guanyu and Wang, Cheng and Zhang, Yue and Fung, Yi R. (May) and He, Junxian},
-  journal={arXiv preprint},
+  title={AgentVista: Evaluating Multimodal Agents in Ultra-Challenging Realistic Visual Scenarios},
+  author={Su, Zhaochen and Gao, Jincheng and Guo, Hangyu and Liu, Zhenhua and Zhang, Lueyang and Geng, Xinyu and Huang, Shijue and Xia, Peng and Jiang, Guanyu and Wang, Cheng and others},
+  journal={arXiv preprint arXiv:2602.23166},
   year={2026}
 }
 ```
