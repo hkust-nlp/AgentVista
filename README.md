@@ -20,7 +20,7 @@
 
 > *Real-world multimodal agents solve multi-step workflows grounded in visual evidence.*
 
-**AgentVista** is the first benchmark that evaluates multimodal agents on realistic, ultra-challenging visual scenarios requiring long-horizon hybrid tool use. It spans **25 sub-domains** across **7 categories** with **209** expert-curated tasks. Even the best model, **Gemini-3-Pro**, achieves only **27.3%** overall accuracy. This repository provides a **lightweight yet general agent framework** for reproducible evaluation.
+**AgentVista** is the first benchmark that evaluates multimodal agents on realistic, ultra-challenging visual scenarios requiring long-horizon hybrid tool use. It spans **25 sub-domains** across **7 categories** with **209** expert-curated tasks. Even the best model, **GPT-5.6-Sol**, achieves only **35.4%** overall accuracy. This repository provides a **lightweight yet general agent framework** for reproducible evaluation.
 
 
 <div align="center">
@@ -33,6 +33,7 @@
 
 ## News
 
+- **[2026/11]** AgentVista is accepted to NeurIPS 2026. The main results are updated with two new frontier models, GPT-5.6-Sol and GPT-6.1-Sol.
 - **[2026/02]** AgentVista benchmark, evaluation codebase, and dataset are publicly released.
 
 ---
@@ -68,13 +69,13 @@ Each task is grounded in detail-rich visual states (daily photos, screenshots, t
 | Statistic | Value |
 |---|---|
 | Total queries | 209 |
-| Total images | 308 |
+| Total images | 307 |
 | Primary categories | 7 |
 | Secondary categories | 25 |
-| Average query length | 401.4 tokens |
-| Average answer length | 40.8 tokens |
-| Single-image queries | 151 (72.2%) |
-| Multi-image queries | 58 (27.8%) |
+| Average query length | 408.2 characters |
+| Average answer length | 42.0 characters |
+| Single-image queries | 152 (72.7%) |
+| Multi-image queries | 57 (27.3%) |
 
 ---
 
@@ -98,27 +99,31 @@ All tools are exposed with detailed descriptions and structured inputs/outputs s
 Performance on AgentVista (accuracy %). Domain abbreviations: **Comm.** (Commerce), **Geog.** (Geography), **Ent.** (Entertainment), **Tech.** (Technology), **Soc.** (Society), **Acad.** (Academics), **Cult.** (Culture).
 
 | Model | Comm. | Geog. | Ent. | Tech. | Soc. | Acad. | Cult. | Single | Multi | **Overall** | Avg Turns |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Qwen3-VL-235B | 7.14 | 7.69 | 7.69 | 26.47 | 16.00 | 20.00 | 13.33 | 11.84 | 15.79 | 12.92 | 2.34 |
-| GPT-4.1 | 16.67 | 15.38 | 10.26 | 29.41 | 20.00 | 20.00 | 13.33 | 15.13 | 24.56 | 17.70 | 1.74 |
-| o3 | 21.43 | 15.38 | 7.69 | 23.53 | **40.00** | 26.67 | 13.33 | 17.76 | 26.32 | 20.10 | 13.18 |
-| o4-mini | 2.38 | 10.26 | 2.56 | 8.82 | 8.00 | 13.33 | 0.00 | 6.58 | 5.26 | 6.22 | 1.89 |
-| GPT-5 | **23.81** | 23.08 | 12.82 | 35.29 | 28.00 | 26.67 | 26.67 | **24.34** | 24.56 | 24.40 | 12.67 |
-| GPT-5.1 | 23.81 | 12.82 | 15.38 | 26.47 | 24.00 | **40.00** | **40.00** | 19.74 | 31.58 | 22.97 | 17.14 |
-| GPT-5.2 | 21.43 | 17.95 | **20.51** | **38.24** | 24.00 | 33.33 | 20.00 | 23.03 | 28.07 | 24.40 | 13.85 |
-| Grok-4 | 11.90 | 23.08 | 7.69 | 20.59 | 28.00 | 0.00 | 0.00 | 13.82 | 17.54 | 14.83 | 16.44 |
-| Claude-Sonnet-4 | 9.52 | 15.38 | 2.56 | 29.41 | 16.00 | 20.00 | 6.67 | 11.18 | 21.05 | 13.88 | 5.37 |
-| Claude-Opus-4 | 19.05 | 12.82 | 5.13 | 26.47 | 20.00 | 20.00 | 6.67 | 11.84 | 26.32 | 15.79 | 6.89 |
-| Claude-Opus-4.1 | 11.90 | 23.08 | 10.26 | 29.41 | 16.00 | 26.67 | 13.33 | 16.45 | 22.81 | 18.18 | 7.28 |
-| Claude-Sonnet-4.5 | 11.90 | 23.08 | 7.69 | 26.47 | 24.00 | 20.00 | 13.33 | 17.11 | 19.30 | 17.70 | 9.99 |
-| Gemini-3-Flash | 16.67 | 17.95 | 10.26 | 29.41 | 28.00 | **40.00** | 20.00 | 18.42 | 28.07 | 21.05 | 7.78 |
-| **Gemini-3-Pro** | 16.67 | **28.21** | **20.51** | 32.35 | 32.00 | **40.00** | **40.00** | 23.68 | **36.84** | **27.27** | 6.67 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| GPT-5.6-Sol | 23.81 | 23.08 | 23.08 | 50.00 | 48.00 | **66.67** | **46.67** | **32.89** | **42.11** | **35.41** | 5.48 |
+| GPT-6.1-Sol | 23.81 | 23.08 | 20.51 | **55.88** | **52.00** | 46.67 | 40.00 | 32.24 | 40.35 | 34.45 | 5.18 |
+| GPT-5.4 | **30.95** | **30.77** | 15.38 | 52.94 | 40.00 | 33.33 | 26.67 | 30.26 | 38.60 | 32.54 | 3.68 |
+| Claude-Opus-4.6 | 21.43 | 23.08 | **28.21** | 47.06 | 36.00 | 33.33 | 26.67 | 28.29 | 35.09 | 30.14 | 7.75 |
+| Gemini-3.1-Pro | 21.43 | 25.64 | 23.08 | 44.12 | 28.00 | 33.33 | 40.00 | 25.66 | 38.60 | 29.19 | 6.09 |
+| Gemini-3-Pro | 16.67 | 28.21 | 23.08 | 32.35 | 32.00 | 40.00 | 40.00 | 23.68 | 38.60 | 27.75 | 6.67 |
+| GPT-5.2 | 21.43 | 20.51 | 23.08 | 38.24 | 28.00 | 33.33 | 20.00 | 24.34 | 29.82 | 25.84 | 13.85 |
+| GPT-5 | 23.81 | 23.08 | 15.38 | 35.29 | 28.00 | 26.67 | 26.67 | 24.34 | 26.32 | 24.88 | 12.67 |
+| GPT-5.1 | 23.81 | 15.38 | 17.95 | 26.47 | 24.00 | 40.00 | 40.00 | 20.39 | 33.33 | 23.92 | 17.14 |
+| Claude-Sonnet-4.6 | 19.05 | 25.64 | 10.26 | 20.59 | 44.00 | 40.00 | 26.67 | 22.37 | 28.07 | 23.92 | 12.91 |
+| Gemini-3-Flash | 16.67 | 20.51 | 12.82 | 29.41 | 28.00 | 40.00 | 20.00 | 19.08 | 29.82 | 22.01 | 7.78 |
+| o3 | 21.43 | 17.95 | 10.26 | 23.53 | 44.00 | 26.67 | 13.33 | 19.08 | 28.07 | 21.53 | 13.18 |
+| Claude-Opus-4.1 | 11.90 | 23.08 | 12.82 | 29.41 | 20.00 | 26.67 | 13.33 | 17.11 | 24.56 | 19.14 | 7.28 |
+| Claude-Sonnet-4.5 | 11.90 | 23.08 | 10.26 | 26.47 | 24.00 | 20.00 | 13.33 | 17.76 | 19.30 | 18.18 | 9.99 |
+| Claude-Opus-4 | 19.05 | 15.38 | 7.69 | 26.47 | 24.00 | 20.00 | 6.67 | 12.50 | 29.82 | 17.22 | 6.89 |
+| Grok-4 | 11.90 | 23.08 | 10.26 | 20.59 | 28.00 | 0.00 | 0.00 | 14.47 | 17.54 | 15.31 | 16.44 |
+| Claude-Sonnet-4 | 9.52 | 17.95 | 5.13 | 29.41 | 16.00 | 20.00 | 6.67 | 11.84 | 22.81 | 14.83 | 5.37 |
+| o4-mini | 2.38 | 10.26 | 5.13 | 8.82 | 12.00 | 13.33 | 0.00 | 7.24 | 7.02 | 7.18 | 1.89 |
 
 **Key Takeaways:**
-- AgentVista is **ultra-challenging**: the best model (Gemini-3-Pro) achieves only 27.27% overall accuracy.
+- AgentVista is **ultra-challenging**: the best model (GPT-5.6-Sol) achieves only 35.41% overall accuracy.
 - Performance varies across domains, revealing complementary strengths among model families.
 - Multi-image inputs are not uniformly harder -- additional views often provide complementary evidence.
-- A sizable gap exists between open-source (Qwen3-VL-235B at 12.92%) and closed-source models, highlighting room for improvement in open-source multimodal agents.
+- A sizable gap exists between open-source (Qwen3-VL-235B at 13.88%) and closed-source models, highlighting room for improvement in open-source multimodal agents.
 
 ---
 
